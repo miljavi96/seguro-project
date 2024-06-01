@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cliente</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      
+
+        <ion-item>
+          <ion-label>Nombre y Apellido:</ion-label>
+          <ion-input [(ngModel)]="cliente.nombre_apellido"></ion-input>
+        </ion-item>
+
+       
+
+        <ion-item>
+          <ion-label>Fecha de Nacimiento:</ion-label>
+          
+          <ion-datetime presentation="date" [(ngModel)]="cliente.fecha_nacimiento" name="fecha"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Bien Asegurado:</ion-label>
+          <ion-input [(ngModel)]="cliente.bien_asegurado"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Monto Asegurado:</ion-label>
+          <ion-input type="number" [(ngModel)]="cliente.monto_asegurado">
+          </ion-input>
+        </ion-item>
+
+      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="accion(cliente.id)">
+      <ion-icon name="save"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
